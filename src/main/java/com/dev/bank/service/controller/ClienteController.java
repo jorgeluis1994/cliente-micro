@@ -54,4 +54,12 @@ public class ClienteController {
         clienteService.eliminarCliente(id);
         return ResponseEntity.noContent().build();
     }
+
+    // GET: listar todos los clientes o filtrar por nombre
+    @GetMapping("/buscar")
+    public ResponseEntity<List<Cliente>> buscarClientes(@RequestParam String nombre) {
+        List<Cliente> clientes = clienteService.buscarPorNombre(nombre);
+        return ResponseEntity.ok(clientes);
+    }
+
 }
