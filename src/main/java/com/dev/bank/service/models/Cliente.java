@@ -9,11 +9,11 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true) // importante para herencia
+@EqualsAndHashCode(callSuper = true) 
 public class Cliente extends Persona {
 
     @Column(unique = true, nullable = false)
-    private String clienteId; // Clave única del cliente
+    private String clienteId;
 
     @Column(nullable = false)
     private String contrasena;
